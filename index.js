@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 //Db setup
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect('mongodb://myUserAdmin:1@localhost:27017/auth?authSource=admin',
-                  { useNewUrlParser: true },
+                  { useNewUrlParser: true, useCreateIndex: true},
                   (error) => {
                     if(error) console.log("error -> ",error)
                   }
