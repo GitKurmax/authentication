@@ -8,10 +8,18 @@ const tokenForUser = user => {
    return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
 }
 
+module.exports.signin = (req, res, next) => {
+   // Users has already had their email and password auth'd
+   // We just need to give them a token
+   
+   res.send({token: tokenForUser(req.user)});
+
+}
+
 module.exports.signup = (req, res, next) => {
    const email = req.body.email;
    const password = req.body.password;
-
+   
    if(!email || !password) {
       return res.status(422).send({ error: 'You must rovile email and password'})
    }
