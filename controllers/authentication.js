@@ -21,7 +21,7 @@ module.exports.signup = (req, res, next) => {
    const password = req.body.password;
    
    if(!email || !password) {
-      return res.status(422).send({ error: 'You must rovile email and password'})
+      return res.status(422).send({ error: 'You must provide email and password'})
    }
 
    // See if a user with a given email exists
