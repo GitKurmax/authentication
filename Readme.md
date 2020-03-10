@@ -1,0 +1,1 @@
+Authentication strategy with passport.js on server.
