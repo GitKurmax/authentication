@@ -25,8 +25,8 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-          <Link to="/">Redux Auth</Link>
-            {this.renderLinks()}  
+        <Link to="/">Redux Auth</Link>
+        {this.renderLinks()}
       </div>
     );
   }
@@ -36,5 +36,4 @@ function mapStateToProps(state) {
   return { authenticated: state.auth.authenticated };
 }
 
-export default Header;
-//export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(Header);
